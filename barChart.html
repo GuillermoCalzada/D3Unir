@@ -1,160 +1,251 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script type="text/javascript" src="d3/d3.v3.js"></script>
+  <meta charset="UTF-8" />
+  <title>d3.js learning</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script type="text/javascript" src="d3/d3.v3.js"></script>
+  //<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <style type="text/css">
+  svg {
+    font: 10px sans-serif;
+    shape-rendering: crispEdges;
+  }
 
-    <title>d3 Examples</title>
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+  }
+ 
+  path.domain {
+    stroke: none;
+  }
+ 
+  .y .tick line {
+    stroke: #ddd;
+  }
+  </style>
+
 </head>
-<body>
-
-<header>
+    <header>
     <div class="container">
         <div class="row">
             <div class="col-md-2">
-                <img src="resources/d3logo.png">
+                <img src="Logo.jpg">
             </div>
             <div class="col-md-10">
-                <h1 class="logo">D3 Examples</h1>
-                <h4>Richard Dalton</h4>
+                <h1 class="logo">Práctica D3</h1>
+                <h4>Tema del sitio Original por Richard Dalton</h4>
+                <h4>Gráficos por Guillermo Calzada</h4>
                 <div class="btn-group btn-group-md" role="group" aria-label="...">
-                    <a href="index.html" class="btn btn-default" role="button">Home</a>
-                    <a href="svg.html" class="btn btn-default" role="button">SVG</a>
-                    <a href="barChart.html" class="btn btn-default" role="button">Bar</a>
-                    <a href="pieChart.html" class="btn btn-default" role="button">Pie</a>
-                    <a href="bubbleChart.html" class="btn btn-default" role="button">Bubble</a>
-                    <a href="force.html" class="btn btn-default" role="button">Force</a>
-                    <a href="globe.html" class="btn btn-default" role="button">Globe</a>
-                    <a href="http://www.d3js.org" class="btn btn-default" role="button">D3.js</a>
+                    <a href="index.html" class="btn btn-default" role="button">Inicio</a>
+                    <a href="Income.html" class="btn btn-default" role="button">EdadVsIngresos</a>
+                    <a href="barChart.html" class="btn btn-default" role="button">Limite Crédito</a>
+                    <a href="pieChart.html" class="btn btn-default" role="button">LimiteVsTransacciones</a>
+                    <a href="bubbleChart.html" class="btn btn-default" role="button">Limite y promedio de crédito</a>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
+<body>
+<div class = "container">
+<h2> Límite de Crédito por edad </h2>
+<p> Después podemos observar que como es de esperarse además de reducirse la cantidad de créditos con la edad 
+    también se reduce el límite de este, es decir el banco otorga menos créditos en cantidad y capacidad a 
+    partir de los 44 años.</p>
+  </div>
 
-<div class="container">
-    <h3>Bar Chart</h3>
-    <p>We can draw a bar chart by usig svg to render a rectangle of the appropriate size for each datapoint.</p>
-    <p>In this example, we also use a D3 logarithmic scale, to map the domain of values 5-1300 to the range of
-    bar heights 0-500.</p>
 
-    <div class="col-md-6">
-        <div id="draw_here"></div>
-    </div>
-
-    <div class="col-md-6">
-<pre>
-    var w = 500;
-    var h = 500;
-    var barPadding = 1;
-
-    var dataset = [ 5, 10, 100, 279, 500, 25, 750, 1200, 800, 1300,
-        110, 102, 15, 200, 175, 168, 180, 230, 205 ];
-
-    var scale = d3.scale.log();
-    scale.domain([5, 1300]);
-    scale.range([0, 500]);
-
-    var svg = d3.select("#draw_here")
-            .append("svg")
-            .attr("width", w)
-            .attr("height", h);
-
-    svg.selectAll("rect")
-            .data(dataset)
-            .enter()
-            .append("rect")
-            .attr("x", function(d, i) {
-                return i * (w / dataset.length);
-            })
-            .attr("y", function(d) {
-                return h - scale(d);
-            })
-            .attr("width", w / dataset.length - barPadding)
-            .attr("height", function(d) {
-                return scale(d);
-            })
-            .attr("fill", function(d) {
-                return "rgb(0, 0, " + (d * 10) + ")";
-            });
-
-    svg.selectAll("text")
-            .data(dataset)
-            .enter()
-            .append("text")
-            .text(function(d) {
-                return d;
-            })
-            .attr("text-anchor", "middle")
-            .attr("x", function(d, i) {
-                return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
-            })
-            .attr("y", function(d) {
-                return h - scale(d) + 14;
-            })
-            .attr("font-family", "sans-serif")
-            .attr("font-size", "11px")
-            .attr("fill", "white");
-
-</pre>
-    </div>
-</div>
-
+  
 <script type="text/javascript">
-    var w = 500;
-    var h = 500;
-    var barPadding = 1;
 
-    var dataset = [ 5, 10, 100, 279, 500, 25, 750, 1200, 800, 1300,
-        110, 102, 15, 200, 175, 168, 180, 230, 205 ];
+// Setup svg using Bostock's margin convention
 
-    var scale = d3.scale.log();
-    scale.domain([5, 1300]);
-    scale.range([0, 500]);
+var margin = {top: 20, right: 160, bottom: 35, left: 300};
 
-    var svg = d3.select("#draw_here")
-            .append("svg")
-            .attr("width", w)
-            .attr("height", h);
+var width = 1500 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
-    svg.selectAll("rect")
-            .data(dataset)
-            .enter()
-            .append("rect")
-            .attr("x", function(d, i) {
-                return i * (w / dataset.length);
-            })
-            .attr("y", function(d) {
-                return h - scale(d);
-            })
-            .attr("width", w / dataset.length - barPadding)
-            .attr("height", function(d) {
-                return scale(d);
-            })
-            .attr("fill", function(d) {
-                return "rgb(0, 0, " + (d * 10) + ")";
-            });
+var svg = d3.select("body")
+  .append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    svg.selectAll("text")
-            .data(dataset)
-            .enter()
-            .append("text")
-            .text(function(d) {
-                return d;
-            })
-            .attr("text-anchor", "middle")
-            .attr("x", function(d, i) {
-                return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
-            })
-            .attr("y", function(d) {
-                return h - scale(d) + 14;
-            })
-            .attr("font-family", "sans-serif")
-            .attr("font-size", "11px")
-            .attr("fill", "white");
+
+/* Data in strings like it would be if imported from a csv */
+
+var data = [
+  {Age: "26",CreditoLimite:"$1.696.114"},
+  {Age: "27",CreditoLimite:"$678.784"},
+  {Age: "28",CreditoLimite:"$258.393"},
+  {Age: "29",CreditoLimite:"$752.092"},
+  {Age: "30",CreditoLimite:"$619.868"},
+  {Age: "31",CreditoLimite:"$1.440.396"},
+  {Age: "32",CreditoLimite:"$1.702.329"},
+  {Age: "33",CreditoLimite:"$2.953.799"},
+  {Age: "34",CreditoLimite:"$2.245.875"},
+  {Age: "35",CreditoLimite:"$3.821.007"},
+  {Age: "36",CreditoLimite:"$2.923.285"},
+  {Age: "37",CreditoLimite:"$4.475.146"},
+  {Age: "38",CreditoLimite:"$5.652.756"},
+  {Age: "39",CreditoLimite:"$5.734.646"},
+  {Age: "40",CreditoLimite:"$5.716.970"},
+  {Age: "41",CreditoLimite:"$6.418.480"},
+  {Age: "42",CreditoLimite:"$6.352.660"},
+  {Age: "43",CreditoLimite:"$7.530.505"},
+  {Age: "44",CreditoLimite:"$7.824.527"},
+  {Age: "45",CreditoLimite:"$8.953.433"},
+  {Age: "46",CreditoLimite:"$9.909.854"},
+  {Age: "47",CreditoLimite:"$7.697.496"},
+  {Age: "48",CreditoLimite:"$7.780.528"},
+  {Age: "49",CreditoLimite:"$8.466.859"},
+  {Age: "50",CreditoLimite:"$8.169.564"},
+  {Age: "51",CreditoLimite:"$7.138.218"},
+  {Age: "52",CreditoLimite:"$6.737.488"},
+  {Age: "53",CreditoLimite:"$6.074.613"},
+  {Age: "54",CreditoLimite:"$4.862.479"},
+  {Age: "55",CreditoLimite:"$5.183.233"},
+  {Age: "56",CreditoLimite:"$4.550.032"},
+  {Age: "57",CreditoLimite:"$3.306.819"},
+  {Age: "58",CreditoLimite:"$2.420.244"},
+  {Age: "59",CreditoLimite:"$3.228.201"},
+  {Age: "60",CreditoLimite:"$2.130.274"},
+  {Age: "61",CreditoLimite:"$1.804.123"},
+  {Age: "62",CreditoLimite:"$2.035.053"},
+  {Age: "63",CreditoLimite:"$988.759"},
+  {Age: "64",CreditoLimite:"$345.245"},
+  {Age: "65",CreditoLimite:"$1.403.885"},
+  {Age: "66",CreditoLimite:"$11.053"},
+  {Age: "67",CreditoLimite:"$22.497"},
+  {Age: "68",CreditoLimite:"$182.541"},
+  {Age: "70",CreditoLimite:"$3.252"},
+  {Age: "73",CreditoLimite:"$4.469"},
+
+
+  
+];
+
+var parse = d3.time.format("%Y").parse;
+
+
+// Transpose the data into layers
+var dataset = d3.layout.stack()(["CreditoLimite"].map(function(fruit) {
+  return data.map(function(d) {
+    return {x: parse(d.Age), y: +d[fruit]};
+  });
+}));
+
+
+// Set x, y and colors
+var x = d3.scale.ordinal()
+  .domain(dataset[0].map(function(d) { return d.x; }))
+  .rangeRoundBands([10, width-10], 0.02);
+
+var y = d3.scale.linear()
+  .domain([0, d3.max(dataset, function(d) {  return d3.max(d, function(d) { return d.y0 + d.y; });  })])
+  .range([height, 0]);
+
+var colors = ["#4db8ff"];
+
+
+// Define and draw axes
+var yAxis = d3.svg.axis()
+  .scale(y)
+  .orient("left")
+  .ticks(5)
+  .tickSize(-width, 0, 0)
+  .tickFormat( function(d) { return d } );
+
+var xAxis = d3.svg.axis()
+  .scale(x)
+  .orient("bottom")
+  .tickFormat(d3.time.format("%dd"));
+
+svg.append("g")
+  .attr("class", "y axis")
+  .call(yAxis);
+
+svg.append("g")
+  .attr("class", "x axis")
+  .attr("transform", "translate(0," + height + ")")
+  .call(xAxis);
+
+
+// Create groups for each series, rects for each segment 
+var groups = svg.selectAll("g.cost")
+  .data(dataset)
+  .enter().append("g")
+  .attr("class", "cost")
+  .style("fill", function(d, i) { return colors[i]; });
+
+var rect = groups.selectAll("rect")
+  .data(function(d) { return d; })
+  .enter()
+  .append("rect")
+  .attr("x", function(d) { return x(d.x); })
+  .attr("y", function(d) { return y(d.y0 + d.y); })
+  .attr("height", function(d) { return y(d.y0) - y(d.y0 + d.y); })
+  .attr("width", x.rangeBand())
+  .on("mouseover", function() { tooltip.style("display", null); })
+  .on("mouseout", function() { tooltip.style("display", "none"); })
+  .on("mousemove", function(d) {
+    var xPosition = d3.mouse(this)[0] - 15;
+    var yPosition = d3.mouse(this)[1] - 25;
+    tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
+    tooltip.select("text").text(d.y);
+  });
+
+
+// Draw legend
+var legend = svg.selectAll(".legend")
+  .data(colors)
+  .enter().append("g")
+  .attr("class", "legend")
+  .attr("transform", function(d, i) { return "translate(30," + i * 19 + ")"; });
+ 
+legend.append("rect")
+  .attr("x", width - 18)
+  .attr("width", 18)
+  .attr("height", 18)
+  .style("fill", function(d, i) {return colors.slice().reverse()[i];});
+ 
+legend.append("text")
+  .attr("x", width + 5)
+  .attr("y", 9)
+  .attr("dy", ".35em")
+  .style("text-anchor", "start")
+  .text(function(d, i) { 
+    switch (i) {
+      case 0: return "Límite de Crédito";
+    }
+  });
+
+
+// Prep the tooltip bits, initial display is hidden
+var tooltip = svg.append("g")
+  .attr("class", "tooltip")
+  .style("display", "none");
+    
+tooltip.append("rect")
+  .attr("width", 30)
+  .attr("height", 20)
+  .attr("fill", "white")
+  .style("opacity", 0.5);
+
+tooltip.append("text")
+  .attr("x", 15)
+  .attr("dy", "1.2em")
+  .style("text-anchor", "middle")
+  .attr("font-size", "12px")
+  .attr("font-weight", "bold");
+  
 </script>
-
+   <div class = "container">
+  <p>Stacked bar chart with tooltips. (n.d.). Retrieved January 22, 2021, from Ocks.org website: http://bl.ocks.org/mstanaland/6100713</p>
+  </div>
 </body>
 </html>
