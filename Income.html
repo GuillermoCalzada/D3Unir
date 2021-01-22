@@ -70,26 +70,16 @@ var svg = d3.select("body")
 /* Data in strings like it would be if imported from a csv */
 
 var data = [
-  { year: "2006", redDelicious: "10", mcintosh: "15", oranges: "9", pears: "6" },
-  { year: "2007", redDelicious: "12", mcintosh: "18", oranges: "9", pears: "4" },
-  { year: "2008", redDelicious: "05", mcintosh: "20", oranges: "8", pears: "2" },
-  { year: "2009", redDelicious: "01", mcintosh: "15", oranges: "5", pears: "4" },
-  { year: "2010", redDelicious: "02", mcintosh: "10", oranges: "4", pears: "2" },
-  { year: "2011", redDelicious: "03", mcintosh: "12", oranges: "6", pears: "3" },
-  { year: "2012", redDelicious: "04", mcintosh: "15", oranges: "8", pears: "1" },
-  { year: "2013", redDelicious: "06", mcintosh: "11", oranges: "9", pears: "4" },
-  { year: "2014", redDelicious: "10", mcintosh: "13", oranges: "9", pears: "5" },
-  { year: "2015", redDelicious: "16", mcintosh: "19", oranges: "6", pears: "9" },
-  { year: "2016", redDelicious: "19", mcintosh: "17", oranges: "5", pears: "7" },
+  {Age: "26",more120k:"1",b40y60:"22",b60y80:"4",b80y120:"0",Less40K:"33",Unknown:"18"},
 ];
 
 var parse = d3.time.format("%Y").parse;
 
 
 // Transpose the data into layers
-var dataset = d3.layout.stack()(["redDelicious", "mcintosh", "oranges", "pears"].map(function(fruit) {
+var dataset = d3.layout.stack()(["more120k", "b40y60", "b60y80", "b80y120","Less40K","Unknown"].map(function(fruit) {
   return data.map(function(d) {
-    return {x: parse(d.year), y: +d[fruit]};
+    return {x: parse(d.Age), y: +d[fruit]};
   });
 }));
 
@@ -174,10 +164,12 @@ legend.append("text")
   .style("text-anchor", "start")
   .text(function(d, i) { 
     switch (i) {
-      case 0: return "Anjou pears";
-      case 1: return "Naval oranges";
-      case 2: return "McIntosh apples";
-      case 3: return "Red Delicious apples";
+      case 0: return "$120k+";
+      case 1: return "$40-$60k";
+      case 2: return "$60-$80k";
+      case 3: return "$80-120k";
+      case 4: return "Less than $40K";
+      case 5: return "Unknown";
     }
   });
 
