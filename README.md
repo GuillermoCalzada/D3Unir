@@ -1,8 +1,8 @@
-## Welcome to GitHub Pages
+## Tema de Git Hub Pages Themes
+## Editado por Guillermo Calzada
 
-You can use the [editor on GitHub](https://github.com/GuillermoCalzada/D3Unir/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Para entrar al repositorio de GitHub [editor on GitHub](https://github.com/GuillermoCalzada/D3Unir/edit/main/README.md).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
 
