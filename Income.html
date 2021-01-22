@@ -1,17 +1,31 @@
-<!-- Code from d3-graph-gallery.com -->
-<!DOCTYPE html>
-<meta charset="utf-8">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script type="text/javascript" src="d3/d3.v3.js"></script>
+  <meta charset="UTF-8" />
+  <title>d3.js learning</title>
+  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <style type="text/css">
+  svg {
+    font: 10px sans-serif;
+    shape-rendering: crispEdges;
+  }
 
-    <title>Práctica D3</title>
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+  }
+ 
+  path.domain {
+    stroke: none;
+  }
+ 
+  .y .tick line {
+    stroke: #ddd;
+  }
+  </style>
+
 </head>
-<body>
-
-<header>
+    <header>
     <div class="container">
         <div class="row">
             <div class="col-md-2">
@@ -35,105 +49,158 @@
         </div>
     </div>
 </header>
+    
+<body>
+<script type="text/javascript">
 
+// Setup svg using Bostock's margin convention
 
-<!-- Load d3.js -->
-<script src="https://d3js.org/d3.v4.js"></script>
+var margin = {top: 20, right: 160, bottom: 35, left: 30};
 
-<!-- Create a div where the graph will take place -->
-<div id="my_dataviz"></div>
+var width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
-<p>
-  <label># bins</label>
-  <input type="number" min="1" max="100" step="30" value="20" id="nBin">
-</p>
-
-
-<script>
-
-// set the dimensions and margins of the graph
-var margin = {top: 10, right: 30, bottom: 30, left: 40},
-    width = 460 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
-
-// append the svg object to the body of the page
-var svg = d3.select("#my_dataviz")
+var svg = d3.select("body")
   .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
   .append("g")
-    .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
-
-// get the data
-d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/1_OneNum.csv", function(data) {
-
-  // X axis: scale and draw:
-  var x = d3.scaleLinear()
-      .domain([0, 1000])     // can use this instead of 1000 to have the max of data: d3.max(data, function(d) { return +d.price })
-      .range([0, width]);
-  svg.append("g")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
-
-  // Y axis: initialization
-  var y = d3.scaleLinear()
-      .range([height, 0]);
-  var yAxis = svg.append("g")
-
-  // A function that builds the graph for a specific value of bin
-  function update(nBin) {
-
-    // set the parameters for the histogram
-    var histogram = d3.histogram()
-        .value(function(d) { return d.price; })   // I need to give the vector of value
-        .domain(x.domain())  // then the domain of the graphic
-        .thresholds(x.ticks(nBin)); // then the numbers of bins
-
-    // And apply this function to data to get the bins
-    var bins = histogram(data);
-
-    // Y axis: update now that we know the domain
-    y.domain([0, d3.max(bins, function(d) { return d.length; })]);   // d3.hist has to be called before the Y axis obviously
-    yAxis
-        .transition()
-        .duration(1000)
-        .call(d3.axisLeft(y));
-
-    // Join the rect with the bins data
-    var u = svg.selectAll("rect")
-        .data(bins)
-
-    // Manage the existing bars and eventually the new ones:
-    u
-        .enter()
-        .append("rect") // Add a new rect for each new elements
-        .merge(u) // get the already existing elements as well
-        .transition() // and apply changes to all of them
-        .duration(1000)
-          .attr("x", 1)
-          .attr("transform", function(d) { return "translate(" + x(d.x0) + "," + y(d.length) + ")"; })
-          .attr("width", function(d) { return x(d.x1) - x(d.x0) -1 ; })
-          .attr("height", function(d) { return height - y(d.length); })
-          .style("fill", "#69b3a2")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
-    // If less bar in the new histogram, I delete the ones not in use anymore
-    u
-        .exit()
-        .remove()
+/* Data in strings like it would be if imported from a csv */
 
-    }
+var data = [
+  { year: "2006", redDelicious: "10", mcintosh: "15", oranges: "9", pears: "6" },
+  { year: "2007", redDelicious: "12", mcintosh: "18", oranges: "9", pears: "4" },
+  { year: "2008", redDelicious: "05", mcintosh: "20", oranges: "8", pears: "2" },
+  { year: "2009", redDelicious: "01", mcintosh: "15", oranges: "5", pears: "4" },
+  { year: "2010", redDelicious: "02", mcintosh: "10", oranges: "4", pears: "2" },
+  { year: "2011", redDelicious: "03", mcintosh: "12", oranges: "6", pears: "3" },
+  { year: "2012", redDelicious: "04", mcintosh: "15", oranges: "8", pears: "1" },
+  { year: "2013", redDelicious: "06", mcintosh: "11", oranges: "9", pears: "4" },
+  { year: "2014", redDelicious: "10", mcintosh: "13", oranges: "9", pears: "5" },
+  { year: "2015", redDelicious: "16", mcintosh: "19", oranges: "6", pears: "9" },
+  { year: "2016", redDelicious: "19", mcintosh: "17", oranges: "5", pears: "7" },
+];
+
+var parse = d3.time.format("%Y").parse;
 
 
-  // Initialize with 20 bins
-  update(20)
+// Transpose the data into layers
+var dataset = d3.layout.stack()(["redDelicious", "mcintosh", "oranges", "pears"].map(function(fruit) {
+  return data.map(function(d) {
+    return {x: parse(d.year), y: +d[fruit]};
+  });
+}));
 
 
-  // Listen to the button -> update if user change it
-  d3.select("#nBin").on("input", function() {
-    update(+this.value);
+// Set x, y and colors
+var x = d3.scale.ordinal()
+  .domain(dataset[0].map(function(d) { return d.x; }))
+  .rangeRoundBands([10, width-10], 0.02);
+
+var y = d3.scale.linear()
+  .domain([0, d3.max(dataset, function(d) {  return d3.max(d, function(d) { return d.y0 + d.y; });  })])
+  .range([height, 0]);
+
+var colors = ["b33040", "#d25c4d", "#f2b447", "#d9d574"];
+
+
+// Define and draw axes
+var yAxis = d3.svg.axis()
+  .scale(y)
+  .orient("left")
+  .ticks(5)
+  .tickSize(-width, 0, 0)
+  .tickFormat( function(d) { return d } );
+
+var xAxis = d3.svg.axis()
+  .scale(x)
+  .orient("bottom")
+  .tickFormat(d3.time.format("%Y"));
+
+svg.append("g")
+  .attr("class", "y axis")
+  .call(yAxis);
+
+svg.append("g")
+  .attr("class", "x axis")
+  .attr("transform", "translate(0," + height + ")")
+  .call(xAxis);
+
+
+// Create groups for each series, rects for each segment 
+var groups = svg.selectAll("g.cost")
+  .data(dataset)
+  .enter().append("g")
+  .attr("class", "cost")
+  .style("fill", function(d, i) { return colors[i]; });
+
+var rect = groups.selectAll("rect")
+  .data(function(d) { return d; })
+  .enter()
+  .append("rect")
+  .attr("x", function(d) { return x(d.x); })
+  .attr("y", function(d) { return y(d.y0 + d.y); })
+  .attr("height", function(d) { return y(d.y0) - y(d.y0 + d.y); })
+  .attr("width", x.rangeBand())
+  .on("mouseover", function() { tooltip.style("display", null); })
+  .on("mouseout", function() { tooltip.style("display", "none"); })
+  .on("mousemove", function(d) {
+    var xPosition = d3.mouse(this)[0] - 15;
+    var yPosition = d3.mouse(this)[1] - 25;
+    tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
+    tooltip.select("text").text(d.y);
   });
 
-});
+
+// Draw legend
+var legend = svg.selectAll(".legend")
+  .data(colors)
+  .enter().append("g")
+  .attr("class", "legend")
+  .attr("transform", function(d, i) { return "translate(30," + i * 19 + ")"; });
+ 
+legend.append("rect")
+  .attr("x", width - 18)
+  .attr("width", 18)
+  .attr("height", 18)
+  .style("fill", function(d, i) {return colors.slice().reverse()[i];});
+ 
+legend.append("text")
+  .attr("x", width + 5)
+  .attr("y", 9)
+  .attr("dy", ".35em")
+  .style("text-anchor", "start")
+  .text(function(d, i) { 
+    switch (i) {
+      case 0: return "Anjou pears";
+      case 1: return "Naval oranges";
+      case 2: return "McIntosh apples";
+      case 3: return "Red Delicious apples";
+    }
+  });
+
+
+// Prep the tooltip bits, initial display is hidden
+var tooltip = svg.append("g")
+  .attr("class", "tooltip")
+  .style("display", "none");
+    
+tooltip.append("rect")
+  .attr("width", 30)
+  .attr("height", 20)
+  .attr("fill", "white")
+  .style("opacity", 0.5);
+
+tooltip.append("text")
+  .attr("x", 15)
+  .attr("dy", "1.2em")
+  .style("text-anchor", "middle")
+  .attr("font-size", "12px")
+  .attr("font-weight", "bold");
+
 </script>
+</body>
+</html>
