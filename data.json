@@ -136,7 +136,7 @@
                 "rate": "AverageCreditLimit"
             }, 
             {
-                "value": 7220
+                "value": 7220,
                 "rate": "LimitUsed"
             }, 
             {
@@ -165,7 +165,7 @@
                 "rate": "LimitUsed"
             }, 
             {
-                "value": 0 
+                "value": 0,
                 "rate": "Very much"
             }, 
             {
