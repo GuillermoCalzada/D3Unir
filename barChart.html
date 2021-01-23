@@ -130,7 +130,7 @@ var data = [
   
 ];
 
-var parse = d3.time.format("%dd").parse;
+var parse = d3.time.format("%Y").parse;
 
 
 // Transpose the data into layers
@@ -164,7 +164,7 @@ var yAxis = d3.svg.axis()
 var xAxis = d3.svg.axis()
   .scale(x)
   .orient("bottom")
-  .tickFormat(d3.time.format("%dd"));
+  .tickFormat(d3.time.format("%Y"));
 
 svg.append("g")
   .attr("class", "y axis")
