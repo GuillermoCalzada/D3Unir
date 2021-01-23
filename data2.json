@@ -2,228 +2,228 @@
    "CreditCards": [
   {
     "Date": 26,
-    "Used": 47,
-    "Transactions": "0"
+    "Used": 470,
+    "Transactions": 3908
   },
   {
     "Date": 27,
-    "Used": 72,
-    "Transactions": "43"
+    "Used": 7243,
+    "Transactions": 2101
   },
   {
     "Date": 28,
-    "Used": 63,
-    "Transactions": "47"
+    "Used": 6347,
+    "Transactions": 2132
   },
   {
     "Date": 29,
-    "Used": 76,
-    "Transactions": "42"
+    "Used": 7642,
+    "Transactions": 4027
   },
   {
     "Date": 30,
-    "Used": 74,
-    "Transactions": "73"
+    "Used": 7473,
+    "Transactions": 4538
   },
   {
     "Date": 31,
-    "Used": 78,
-    "Transactions": "12"
+    "Used": 7812,
+    "Transactions": 6961
   },
   {
     "Date": 32,
-    "Used": 79,
-    "Transactions": "51"
+    "Used": 7951,
+    "Transactions": 7445
   },
   {
     "Date": 33,
-    "Used": 69,
-    "Transactions": "17"
+    "Used": 6917,
+    "Transactions": 7985
   },
   {
     "Date": 34,
-    "Used": 65,
-    "Transactions": "52"
+    "Used": 6552,
+    "Transactions": 9132
   },
   {
     "Date": 35,
-    "Used": 70,
-    "Transactions": "10"
+    "Used": 7010,
+    "Transactions": 11455
   },
   {
     "Date": 36,
-    "Used": 58,
-    "Transactions": "91"
+    "Used": 5891,
+    "Transactions": 13767
   },
   {
     "Date": 37,
-    "Used": 66,
-    "Transactions": "73"
+    "Used": 6673,
+    "Transactions": 16346
   },
   {
     "Date": 38,
-    "Used": 75,
-    "Transactions": "06"
+    "Used": 756,
+    "Transactions": 19087
   },
   {
     "Date": 39,
-    "Used": 71,
-    "Transactions": "35"
+    "Used": 7135,
+    "Transactions": 21095
   },
   {
     "Date": 40,
-    "Used": 73,
-    "Transactions": "52"
+    "Used": 7352,
+    "Transactions": 24303
   },
   {
     "Date": 41,
-    "Used": 69,
-    "Transactions": "24"
+    "Used": 6924,
+    "Transactions": 25241
   },
   {
     "Date": 42,
-    "Used": 75,
-    "Transactions": "79"
+    "Used": 7579,
+    "Transactions": 29192
   },
   {
     "Date": 43,
-    "Used": 73,
-    "Transactions": "61"
+    "Used": 7361,
+    "Transactions": 31623
   },
   {
     "Date": 44,
-    "Used": 72,
-    "Transactions": "69"
+    "Used": 7269,
+    "Transactions": 33372
   },
   {
     "Date": 45,
-    "Used": 75,
-    "Transactions": "32"
+    "Used": 7532,
+    "Transactions": 32576
   },
   {
     "Date": 46,
-    "Used": 74,
-    "Transactions": "09"
+    "Used": 749,
+    "Transactions": 32858
   },
   {
     "Date": 47,
-    "Used": 77,
-    "Transactions": "10"
+    "Used": 7710,
+    "Transactions": 32182
   },
   {
     "Date": 48,
-    "Used": 72,
-    "Transactions": "88"
+    "Used": 7288,
+    "Transactions": 31440
   },
   {
     "Date": 49,
-    "Used": 72,
-    "Transactions": "14"
+    "Used": 7214,
+    "Transactions": 33749
   },
   {
     "Date": 50,
-    "Used": 69,
-    "Transactions": "84"
+    "Used": 6984,
+    "Transactions": 30615
   },
   {
     "Date": 51,
-    "Used": 74,
-    "Transactions": "12"
+    "Used": 7412,
+    "Transactions": 27498
   },
   {
     "Date": 52,
-    "Used": 74,
-    "Transactions": "99"
+    "Used": 7499,
+    "Transactions": 25253
   },
   {
     "Date": 53,
-    "Used": 73,
-    "Transactions": "79"
+    "Used": 7379,
+    "Transactions": 23688
   },
   {
     "Date": 54,
-    "Used": 68,
-    "Transactions": "22"
+    "Used": 6822,
+    "Transactions": 17963
   },
   {
     "Date": 55,
-    "Used": 72,
-    "Transactions": "68"
+    "Used": 7268,
+    "Transactions": 16472
   },
   {
     "Date": 56,
-    "Used": 73,
-    "Transactions": "60"
+    "Used": 7360,
+    "Transactions": 16211
   },
   {
     "Date": 57,
-    "Used": 75,
-    "Transactions": "41"
+    "Used": 7541,
+    "Transactions": 13463
   },
   {
     "Date": 58,
-    "Used": 78,
-    "Transactions": "87"
+    "Used": 7887,
+    "Transactions": 9393
   },
   {
     "Date": 59,
-    "Used": 64,
-    "Transactions": "07"
+    "Used": 647,
+    "Transactions": 9377
   },
   {
     "Date": 60,
-    "Used": 70,
-    "Transactions": "36"
+    "Used": 7036,
+    "Transactions": 8548
   },
   {
     "Date": 61,
-    "Used": 69,
-    "Transactions": "15"
+    "Used": 6915,
+    "Transactions": 5415
   },
   {
     "Date": 62,
-    "Used": 58,
-    "Transactions": "02"
+    "Used": 582,
+    "Transactions": 5036
   },
   {
     "Date": 63,
-    "Used": 63,
-    "Transactions": "38"
+    "Used": 6338,
+    "Transactions": 3338
   },
   {
     "Date": 64,
-    "Used": 54,
-    "Transactions": "18"
+    "Used": 5418,
+    "Transactions": 2269
   },
   {
     "Date": 65,
-    "Used": 55,
-    "Transactions": "99"
+    "Used": 5599,
+    "Transactions": 5455
   },
   {
     "Date": 66,
-    "Used": 64,
-    "Transactions": "85"
+    "Used": 6485,
+    "Transactions": 54
   },
   {
     "Date": 67,
-    "Used": 61,
-    "Transactions": "69"
+    "Used": 6169,
+    "Transactions": 159
   },
   {
     "Date": 68,
-    "Used": 93,
-    "Transactions": "33"
+    "Used": 9333,
+    "Transactions": 53
   },
   {
     "Date": 70,
-    "Used": 62,
-    "Transactions": "27"
+    "Used": 6227,
+    "Transactions": 15
   },
   {
     "Date": 73,
-    "Used": 60,
-    "Transactions": "51"
+    "Used": 6051,
+    "Transactions": 34
   }
 ]
 }
