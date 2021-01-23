@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-<meta charset="UTF-8" />
-
-  <title>d3.js learning</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script type="text/javascript" src="d3/d3.v3.js"></script>
+<meta charset="utf-8">
+<style>
 
 body { font: 12px Arial;}
 
@@ -22,37 +19,7 @@ path {
 }
 
 </style>
-
-</head>
-    <header>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2">
-                <img src="Logo.jpg">
-            </div>
-            <div class="col-md-10">
-                <h1 class="logo">Práctica D3</h1>
-                <h4>Tema del sitio Original por Richard Dalton</h4>
-                <h4>Gráficos por Guillermo Calzada</h4>
-                <div class="btn-group btn-group-md" role="group" aria-label="...">
-                    <a href="index.html" class="btn btn-default" role="button">Inicio</a>
-                    <a href="Income.html" class="btn btn-default" role="button">EdadVsIngresos</a>
-                    <a href="barChart.html" class="btn btn-default" role="button">Limite Crédito</a>
-                    <a href="LineChart.html" class="btn btn-default" role="button">LimiteVsTransacciones</a>
-                    <a href="barChart2.html" class="btn btn-default" role="button">Limite y promedio de crédito</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-
-
 <body>
-<div class = "container">
-<h2> Uso de crédito Vs total de transacciones </h2>
-<p>Esto provoca que sea más fácil alcanzar el límite de crédito para los tarjetahabientes con un menor número de transacciones</p>
-</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
 
 <script>
@@ -93,7 +60,7 @@ var svg = d3.select("body")
               "translate(" + margin.left + "," + margin.top + ")");
 
 // Get the data
-d3.csv("data2.csv", function(error, data) {
+d3.csv("data2a.csv", function(error, data) {
     data.forEach(function(d) {
         d.date = parseDate(d.date);
         d.close = +d.close;
@@ -133,7 +100,4 @@ d3.csv("data2.csv", function(error, data) {
 });
 
 </script>
-<div class = "container">
-<p>Multiple line graph in v4. (n.d.). Retrieved January 23, 2021, from Ocks.org website: https://bl.ocks.org/d3noob/4db972df5d7efc7d611255d1cc6f3c4f</p>
-
 </body>
