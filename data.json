@@ -1,21 +1,21 @@
 [
     {
-        "categorie": "Student", 
+        "categorie": "College", 
         "values": [
             {
-                "value": 0, 
-                "rate": "Not at all"
+                "value": 65862,
+                "rate": "Transactions"
             }, 
             {
-                "value": 4, 
-                "rate": "Not very much"
+                "value": 19746,
+                "rate": "AverageCreditLimit"
             }, 
             {
-                "value": 12, 
-                "rate": "Medium"
+                "value": 7031,
+                "rate": "LimitUsed"
             }, 
             {
-                "value": 6, 
+                "value": 0,
                 "rate": "Very much"
             }, 
             {
@@ -25,122 +25,122 @@
         ]
     }, 
     {
-        "categorie": "Liberal Profession", 
+        "categorie": "Doctorate", 
         "values": [
             {
-                "value": 1, 
-                "rate": "Not at all"
+                "value": 28767,
+                "rate": "Transactions"
             }, 
             {
-                "value": 21, 
-                "rate": "Not very much"
+                "value": 21763,
+                "rate": "AverageCreditLimit"
             }, 
             {
-                "value": 13, 
-                "rate": "Medium"
+                "value": 6939,
+                "rate": "LimitUsed"
             }, 
             {
-                "value": 18, 
+                "value": 0,
                 "rate": "Very much"
             }, 
             {
-                "value": 6, 
+                "value": 0,
                 "rate": "Tremendously"
             }
         ]
     }, 
     {
-        "categorie": "Salaried Staff", 
+        "categorie": "Graduate", 
         "values": [
             {
-                "value": 3, 
-                "rate": "Not at all"
+                "value": 202955,
+                "rate": "Transactions"
             }, 
             {
-                "value": 22, 
-                "rate": "Not very much"
+                "value": 16533,
+                "rate": "AverageCreditLimit"
             }, 
             {
-                "value": 6, 
-                "rate": "Medium"
+                "value": 7196,
+                "rate": "LimitUsed"
             }, 
             {
-                "value": 15, 
+                "value": 0,
                 "rate": "Very much"
             }, 
             {
-                "value": 3, 
+                "value": 0,
                 "rate": "Tremendously"
             }
         ]
     }, 
     {
-        "categorie": "Employee", 
+        "categorie": "High School", 
         "values": [
             {
-                "value": 12, 
-                "rate": "Not at all"
+                "value": 130227,
+                "rate": "Transactions"
             }, 
             {
-                "value": 7, 
-                "rate": "Not very much"
+                "value": 157551,
+                "rate": "AverageCreditLimit"
             }, 
             {
-                "value": 18, 
-                "rate": "Medium"
+                "value": 7339,
+                "rate": "LimitUsed"
             }, 
             {
-                "value": 13, 
+                "value": 0,
                 "rate": "Very much"
             }, 
             {
-                "value": 6, 
+                "value": 0,
                 "rate": "Tremendously"
             }
         ]
     }, 
     {
-        "categorie": "Craftsman", 
+        "categorie": "Post-Graduate", 
         "values": [
             {
-                "value": 6, 
-                "rate": "Not at all"
+                "value": 33540,
+                "rate": "Transactions"
             }, 
             {
-                "value": 15, 
-                "rate": "Not very much"
+                "value": 16641,
+                "rate": "AverageCreditLimit"
             }, 
             {
-                "value": 9, 
-                "rate": "Medium"
+                "value": 7301,
+                "rate": "LimitUsed"
             }, 
             {
-                "value": 12, 
+                "value": 0,
                 "rate": "Very much"
             }, 
             {
-                "value": 3, 
+                "value": 0,
                 "rate": "Tremendously"
             }
         ]
     }, 
    {
-        "categorie": "Student", 
+        "categorie": "Uneducated", 
         "values": [
             {
-                "value": 0, 
-                "rate": "Not at all"
+                "value": 97124,
+                "rate": "Transactions"
             }, 
             {
-                "value": 4, 
-                "rate": "Not very much"
+                "value": 17110,
+                "rate": "AverageCreditLimit"
             }, 
             {
-                "value": 12, 
-                "rate": "Medium"
+                "value": 7220
+                "rate": "LimitUsed"
             }, 
             {
-                "value": 6, 
+                "value": 0,
                 "rate": "Very much"
             }, 
             {
@@ -150,26 +150,26 @@
         ]
     }, 
     {
-        "categorie": "Inactive", 
+        "categorie": "Unknown", 
         "values": [
             {
-                "value": 6, 
-                "rate": "Not at all"
+                "value": 98349,
+                "rate": "Transactions"
             }, 
             {
-                "value": 6, 
-                "rate": "Not very much"
+                "value": 16419,
+                "rate": "AverageCreditLimit"
             }, 
             {
-                "value": 6, 
-                "rate": "Medium"
+                "value": 7105,
+                "rate": "LimitUsed"
             }, 
             {
-                "value": 2, 
+                "value": 0 
                 "rate": "Very much"
             }, 
             {
-                "value": 3, 
+                "value": 0,
                 "rate": "Tremendously"
             }
         ]
