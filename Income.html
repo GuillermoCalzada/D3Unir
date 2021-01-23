@@ -158,8 +158,8 @@ var yAxis = d3.svg.axis()
   .orient("left")
   .ticks(5)
   .tickSize(-width, 0, 0)
-  //.tickFormat( function(d) { return d } );
-  .tickFormat('$%,.0f');
+  .tickFormat( function(d) { return d } );
+  //.tickFormat('$%,.0f');
 
 var xAxis = d3.svg.axis()
   .scale(x)
