@@ -9,7 +9,35 @@
 }
 
 </style>
+
+</head>
+    <header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <img src="Logo.jpg">
+            </div>
+            <div class="col-md-10">
+                <h1 class="logo">Práctica D3</h1>
+                <h4>Tema del sitio Original por Richard Dalton</h4>
+                <h4>Gráficos por Guillermo Calzada</h4>
+                <div class="btn-group btn-group-md" role="group" aria-label="...">
+                    <a href="index.html" class="btn btn-default" role="button">Inicio</a>
+                    <a href="Income.html" class="btn btn-default" role="button">EdadVsIngresos</a>
+                    <a href="barChart.html" class="btn btn-default" role="button">Limite Crédito</a>
+                    <a href="LineChart.html" class="btn btn-default" role="button">LimiteVsTransacciones</a>
+                    <a href="barChart2.html" class="btn btn-default" role="button">Limite y promedio de crédito</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
 <body>
+<div class = "container">
+<h2> Uso de crédito Vs total de transacciones </h2>
+<p>Esto provoca que sea más fácil alcanzar el límite de crédito para los tarjetahabientes con un menor número de transacciones</p>
+  </div>
 
 <!-- load the d3.js library -->    	
 <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -88,4 +116,5 @@ d3.csv("data2.csv", function(error, data) {
 });
 
 </script>
+<p>Multiple line graph in v4. (n.d.). Retrieved January 23, 2021, from Ocks.org website: https://bl.ocks.org/d3noob/4db972df5d7efc7d611255d1cc6f3c4f</p>
 </body>
