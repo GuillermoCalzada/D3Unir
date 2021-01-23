@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<style>
+
+  <title>d3.js learning</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script type="text/javascript" src="d3/d3.v3.js"></script>
+  //<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <style type="text/css">
 
 body {
   font: 10px sans-serif;
@@ -18,7 +23,36 @@ body {
 }
 
 </style>
+    <header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <img src="Logo.jpg">
+            </div>
+            <div class="col-md-10">
+                <h1 class="logo">Práctica D3</h1>
+                <h4>Tema del sitio Original por Richard Dalton</h4>
+                <h4>Gráficos por Guillermo Calzada</h4>
+                <div class="btn-group btn-group-md" role="group" aria-label="...">
+                    <a href="index.html" class="btn btn-default" role="button">Inicio</a>
+                    <a href="Income.html" class="btn btn-default" role="button">EdadVsIngresos</a>
+                    <a href="barChart.html" class="btn btn-default" role="button">Limite Crédito</a>
+                    <a href="LineChart.html" class="btn btn-default" role="button">LimiteVsTransacciones</a>
+                    <a href="barChart2.html" class="btn btn-default" role="button">Limite y promedio de crédito</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
 <body>
+  <div class = "container">
+  <h2> Edad Vs Ingresos Correlación </h2>
+  <p>Este gráfico por ejemplo nos permite ver, primero que la mayor concentración de datos que tenemos es entre 35 y 56 años, 
+  edades en las que los bancos se enfocan para ofrecer tarjetas de crédito y va muy de la mano con el ingreso de estos segmentos. 
+  Adicional, podemos notar que el segmento que el rango de ingresos menores a $40k se mantiene casi hasta los 65 como uno de los
+  principales, mientras que el mayor a $120k apenas figura. </p>
+  </div>
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script>
 
