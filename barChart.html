@@ -1,10 +1,6 @@
-<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>d3.js learning</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script type="text/javascript" src="d3/d3.v3.js"></script>
-  //<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <style type="text/css">
   svg {
     font: 10px sans-serif;
@@ -51,17 +47,13 @@
 
 <body>
 <div class = "container">
-<h2> Límite de Crédito por edad </h2>
+<h2> Histograma Límite de Crédito por edad </h2>
 <p> Después podemos observar que como es de esperarse además de reducirse la cantidad de créditos con la edad 
     también se reduce el límite de este, es decir el banco otorga menos créditos en cantidad y capacidad a 
     partir de los 44 años.</p>
   </div>
-
-
   
 <script type="text/javascript">
-
-// Setup svg using Bostock's margin convention
 
 var margin = {top: 20, right: 160, bottom: 35, left: 300};
 
@@ -74,9 +66,6 @@ var svg = d3.select("body")
   .attr("height", height + margin.top + margin.bottom)
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-
-/* Data in strings like it would be if imported from a csv */
 
 var data = [
   {Age: "26",CreditoLimite:"1696114"},
@@ -123,25 +112,18 @@ var data = [
   {Age: "67",CreditoLimite:"22497"},
   {Age: "68",CreditoLimite:"182541"},
   {Age: "70",CreditoLimite:"3252"},
-  {Age: "73",CreditoLimite:"4469"},
-
-
-
-  
+  {Age: "73",CreditoLimite:"4469"},  
 ];
 
 var parse = d3.time.format("%Y").parse;
 
 
-// Transpose the data into layers
 var dataset = d3.layout.stack()(["CreditoLimite"].map(function(fruit) {
   return data.map(function(d) {
     return {x: parse(d.Age), y: +d[fruit]};
   });
 }));
 
-
-// Set x, y and colors
 var x = d3.scale.ordinal()
   .domain(dataset[0].map(function(d) { return d.x; }))
   .rangeRoundBands([10, width-10], 0.02);
@@ -152,8 +134,6 @@ var y = d3.scale.linear()
 
 var colors = ["#4db8ff"];
 
-
-// Define and draw axes
 var yAxis = d3.svg.axis()
   .scale(y)
   .orient("left")
@@ -176,8 +156,6 @@ svg.append("g")
   .attr("transform", "translate(0," + height + ")")
   .call(xAxis);
 
-
-// Create groups for each series, rects for each segment 
 var groups = svg.selectAll("g.cost")
   .data(dataset)
   .enter().append("g")
@@ -201,8 +179,6 @@ var rect = groups.selectAll("rect")
     tooltip.select("text").text(d.y);
   });
 
-
-// Draw legend
 var legend = svg.selectAll(".legend")
   .data(colors)
   .enter().append("g")
@@ -226,8 +202,6 @@ legend.append("text")
     }
   });
 
-
-// Prep the tooltip bits, initial display is hidden
 var tooltip = svg.append("g")
   .attr("class", "tooltip")
   .style("display", "none");
@@ -250,4 +224,3 @@ tooltip.append("text")
   <p>Stacked bar chart with tooltips. (n.d.). Retrieved January 22, 2021, from Ocks.org website: http://bl.ocks.org/mstanaland/6100713</p>
   </div>
 </body>
-</html>
