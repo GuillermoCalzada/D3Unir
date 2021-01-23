@@ -14,14 +14,6 @@
                 "value": 7031,
                 "rate": "LimitUsed"
             }, 
-            {
-                "value": 0,
-                "rate": "Very much"
-            }, 
-            {
-                "value": 0, 
-                "rate": "Tremendously"
-            }
         ]
     }, 
     {
@@ -39,14 +31,6 @@
                 "value": 6939,
                 "rate": "LimitUsed"
             }, 
-            {
-                "value": 0,
-                "rate": "Very much"
-            }, 
-            {
-                "value": 0,
-                "rate": "Tremendously"
-            }
         ]
     }, 
     {
@@ -64,14 +48,6 @@
                 "value": 7196,
                 "rate": "LimitUsed"
             }, 
-            {
-                "value": 0,
-                "rate": "Very much"
-            }, 
-            {
-                "value": 0,
-                "rate": "Tremendously"
-            }
         ]
     }, 
     {
@@ -89,14 +65,6 @@
                 "value": 7339,
                 "rate": "LimitUsed"
             }, 
-            {
-                "value": 0,
-                "rate": "Very much"
-            }, 
-            {
-                "value": 0,
-                "rate": "Tremendously"
-            }
         ]
     }, 
     {
@@ -114,14 +82,6 @@
                 "value": 7301,
                 "rate": "LimitUsed"
             }, 
-            {
-                "value": 0,
-                "rate": "Very much"
-            }, 
-            {
-                "value": 0,
-                "rate": "Tremendously"
-            }
         ]
     }, 
    {
@@ -139,14 +99,6 @@
                 "value": 7220,
                 "rate": "LimitUsed"
             }, 
-            {
-                "value": 0,
-                "rate": "Very much"
-            }, 
-            {
-                "value": 0, 
-                "rate": "Tremendously"
-            }
         ]
     }, 
     {
@@ -164,14 +116,6 @@
                 "value": 7105,
                 "rate": "LimitUsed"
             }, 
-            {
-                "value": 0,
-                "rate": "Very much"
-            }, 
-            {
-                "value": 0,
-                "rate": "Tremendously"
-            }
         ]
     }
 ]
