@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 
+  <title>d3.js learning</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script type="text/javascript" src="d3/d3.v3.js"></script>
+  //<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <style type="text/css">
+
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v4.js"></script>
 
@@ -14,11 +20,34 @@
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
 
+</style>
+    <header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <img src="Logo.jpg">
+            </div>
+            <div class="col-md-10">
+                <h1 class="logo">Práctica D3</h1>
+                <h4>Tema del sitio Original por Richard Dalton</h4>
+                <h4>Gráficos por Guillermo Calzada</h4>
+                <div class="btn-group btn-group-md" role="group" aria-label="...">
+                    <a href="index.html" class="btn btn-default" role="button">Inicio</a>
+                    <a href="Income.html" class="btn btn-default" role="button">EdadVsIngresos</a>
+                    <a href="barChart.html" class="btn btn-default" role="button">Limite Crédito</a>
+                    <a href="LineChart.html" class="btn btn-default" role="button">LimiteVsTransacciones</a>
+                    <a href="barChart2.html" class="btn btn-default" role="button">Limite y promedio de crédito</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
 <script>
 
 // set the dimensions and margins of the graph
 var margin = {top: 10, right: 100, bottom: 30, left: 30},
-    width = 460 - margin.left - margin.right,
+    width = 960 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
