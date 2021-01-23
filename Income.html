@@ -162,7 +162,8 @@ var yAxis = d3.svg.axis()
 var xAxis = d3.svg.axis()
   .scale(x)
   .orient("bottom")
-  .tickFormat(d3.time.format("%d"));
+  //.tickFormat(d3.time.format("%d"));
+  .tickFormat(d3.format("d"));
 
 svg.append("g")
   .attr("class", "y axis")
