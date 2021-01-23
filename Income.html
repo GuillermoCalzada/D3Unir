@@ -128,7 +128,7 @@ var data = [
   
 ];
 
-//var parse = d3.time.format("%Y").parse;
+var parse = d3.time.format("%Y").parse;
 //var parse = d3.format("d").parse;
 
 
@@ -158,7 +158,8 @@ var yAxis = d3.svg.axis()
   .orient("left")
   .ticks(5)
   .tickSize(-width, 0, 0)
-  .tickFormat( function(d) { return d } );
+  //.tickFormat( function(d) { return d } );
+  .tickFormat('$%,.0f')
 
 var xAxis = d3.svg.axis()
   .scale(x)
