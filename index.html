@@ -48,7 +48,18 @@
     <p>
     Las base del tema de los gráficos se obtubieron de diferentes fuentes, al pie de cada gráfico menciono al fuente principal de cada uno
     </p>
-    var chart = c3.generate({
+    
+ <!----------------------------------->
+ <div class='container'>
+<h1 class='title'>Combination Chart</h1>
+<div class='chart'>
+<div id='chart'></div>
+</div>
+<div id='ace-error'></div>
+<div class='sourcecode margin-medium-v margin-small-h'>
+<h3># chart_combination.js</h3>
+<div class='c3-editor' id='javascript-editor'>
+var chart = c3.generate({
     data: {
         columns: [
             ['data1', 30, 20, 50, 40, 60, 50],
@@ -69,6 +80,12 @@
         ]
     }
 });
+
+</div>
+</div>
+     
+<!------------------------------------------------------------>
+    
 
 </body>
 </html>
