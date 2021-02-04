@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <!--<script type="text/javascript" src="d3/d3.v3.js"></script>-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script type="text/javascript" src="d3/d3.v3.js"></script>-->
     <!-- Load c3.css -->
     <link href="/path/to/c3.css" rel="stylesheet">
 
@@ -15,47 +15,46 @@
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2">
-                <img src="Logo.jpg">
-            </div>
-            <div class="col-md-10">
-                <h1 class="logo">Práctica D3</h1>
-                <h4>Tema base del sitio por Richard Dalton</h4>
-                <h4>Gráficos editados por Guillermo Calzada</h4>
-                <h4>Datos de Keaggle</h4>
-                
-                <div class="btn-group btn-group-md" role="group" aria-label="...">
-                    <a href="index.html" class="btn btn-default" role="button">Inicio</a>
-                    <a href="Income.html" class="btn btn-default" role="button">EdadVsIngresos</a>
-                    <a href="barChart.html" class="btn btn-default" role="button">Limite Crédito</a>
-                    <a href="LineChart.html" class="btn btn-default" role="button">LimiteVsTransacciones</a>
-                    <a href="barChart2.html" class="btn btn-default" role="button">Limite y promedio de crédito</a>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="Logo.jpg">
+                </div>
+                <div class="col-md-10">
+                    <h1 class="logo">Práctica D3</h1>
+                    <h4>Tema base del sitio por Richard Dalton</h4>
+                    <h4>Gráficos editados por Guillermo Calzada</h4>
+                    <h4>Datos de Keaggle</h4>
+
+                    <div class="btn-group btn-group-md" role="group" aria-label="...">
+                        <a href="index.html" class="btn btn-default" role="button">Inicio</a>
+                        <a href="Income.html" class="btn btn-default" role="button">EdadVsIngresos</a>
+                        <a href="barChart.html" class="btn btn-default" role="button">Limite Crédito</a>
+                        <a href="LineChart.html" class="btn btn-default" role="button">LimiteVsTransacciones</a>
+                        <a href="barChart2.html" class="btn btn-default" role="button">Limite y promedio de crédito</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
 <div class="container">
     <h3>Objetivo del sitio</h3>
     <p>Este sitio se creó como práctica para trabajar con Gráficos D3 </p>
-    <p>Los datos muestra se obtuvieron de https://www.kaggle.com/sakshigoyal7/credit-card-customers.
-        Este dataset contiene información de tarjetahabientes y el uso que dan a sus tarjetas de crédito. 
-    </p>
-    <p>
-    Elegí este conjunto de datos que me pareció interesante explorar un poco el comportamiento y grupos 
-    de usuarios de tarjetas de crédito, con ello pude validar algunas teorías que tenía en mente referente a estos instrumentos:   
-    Usé diferentes gráficos que creo pueden dar claridad del punto que intento 
-    </p>
-    <p>
-    Las base del tema de los gráficos se obtubieron de diferentes fuentes, al pie de cada gráfico menciono al fuente principal de cada uno
-    </p>
-    
-<!----------------------------------->
-<div id="chart">
+        <p>Los datos muestra se obtuvieron de https://www.kaggle.com/sakshigoyal7/credit-card-customers.
+            Este dataset contiene información de tarjetahabientes y el uso que dan a sus tarjetas de crédito. 
+        </p>
+        <p>
+        Elegí este conjunto de datos que me pareció interesante explorar un poco el comportamiento y grupos 
+        de usuarios de tarjetas de crédito, con ello pude validar algunas teorías que tenía en mente referente a estos instrumentos:   
+        Usé diferentes gráficos que creo pueden dar claridad del punto que intento 
+        </p>
+        <p>
+        Las base del tema de los gráficos se obtubieron de diferentes fuentes, al pie de cada gráfico menciono al fuente principal de cada uno
+        </p>
+</div>
+<div id="chart"></div>
     var chart = c3.generate({
     bindto: '#chart',
     data: {
@@ -65,8 +64,7 @@
       ]
     }
 });
-    </div>
-<!------------------------------------------------------------>
+
     
 
 </body>
