@@ -1,13 +1,32 @@
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <img src="Logo.jpg">
+            </div>
+            <div class="col-md-10">
+                <h1 class="logo">Práctica D3</h1>
+                <div class="btn-group btn-group-md" role="group" aria-label="...">
+                    <a href="index.html" class="btn btn-default" role="button">Inicio</a>
+                    <a href="Income.html" class="btn btn-default" role="button">EdadVsIngresos</a>
+                    <a href="barChart.html" class="btn btn-default" role="button">Limite Crédito</a>
+                    <a href="LineChart.html" class="btn btn-default" role="button">LimiteVsTransacciones</a>
+                    <a href="barChart2.html" class="btn btn-default" role="button">Limite y promedio de crédito</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
 <body>
 <div id="chart"></div>
-
-<script>
 
 <link href="/path/to/c3.css" rel="stylesheet">
 
 <script src="/path/to/d3.v5.min.js" charset="utf-8"></script>
 <script src="/path/to/c3.min.js"></script>
+    
+<script>
     
 var chart = c3.generate({
     bindto: '#chart',
