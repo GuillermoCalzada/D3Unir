@@ -17,17 +17,5 @@ var chart = c3.generate({
       ]
     }
 });
-require.config({
-  baseUrl: '/js',
-  paths: {
-    d3: "http://d3js.org/d3.v5.min"
-  }
-});
-
-require(["d3", "c3"], function(d3, c3) {
-  c3.generate({
-    ...
-  });
-});
 </script>
 </body>
