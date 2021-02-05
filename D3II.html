@@ -93,7 +93,7 @@ function chart(csv) {
 		.attr("class", "y-axis")
 
 	var z = d3.scaleOrdinal()
-		.range(["steelblue", "darkorange", "lightblue"])
+		.range(["steelblue", "darkorange", "lightblue","blue","green","yellow"])
 		.domain(keys);
 
 	update(d3.select("#gender").property("value"), 0)
