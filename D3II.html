@@ -60,8 +60,10 @@ function chart(csv) {
 
 	var svg = d3.select("#chart"),
 		margin = {top: 20, left: 300, bottom: 30, right: 160},
-		width = +svg.attr("width") - margin.left - margin.right,
-		height = +svg.attr("height") - margin.top - margin.bottom;
+	    	width = 1500 - margin.left - margin.right,
+   		height = 500 - margin.top - margin.bottom;
+		/*width = +svg.attr("width") - margin.left - margin.right,
+		height = +svg.attr("height") - margin.top - margin.bottom;*/
 
 	var x = d3.scaleBand()
 		.range([margin.left, width - margin.right])
