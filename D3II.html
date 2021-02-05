@@ -68,11 +68,7 @@ function chart(csv) {
 	//Define la variable Gender y Ages tomando los valores únicos de cada coulmna de data.csv respectivamente
 	var gender   = [...new Set(csv.map(d => d.Gender))]
 	var ages = [...new Set(csv.map(d => d.Age))]
-	
-	var options = d3.select("#gender").selectAll("option")
-		.data(gender)
-	.enter().append("option")
-		.text(d => d)
+
 	
 	//Define dimensiónes del gráfico, anchode barras, margenes etc)
 	var svg = d3.select("#chart"),
