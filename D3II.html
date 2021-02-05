@@ -61,7 +61,7 @@ Order Descendente
 d3.csv("data.csv").then(d => chart(d))
 
 function chart(csv) {
-
+	//Define a partir de que columna considera las llaves para el gráfico (en nuestro caso dejamos dos coulmnas fuera Gender y Age)
 	var keys = csv.columns.slice(2);
 
 	var gender   = [...new Set(csv.map(d => d.Gender))]
