@@ -62,7 +62,7 @@ d3.csv("data.csv").then(d => chart(d))
 
 function chart(csv) {
 
-	var keys = csv.columns.slice(2);
+	var keys = csv.columns.slice(5);
 
 	var gender   = [...new Set(csv.map(d => d.Gender))]
 	var ages = [...new Set(csv.map(d => d.Age))]
