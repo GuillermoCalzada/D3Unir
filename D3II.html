@@ -49,8 +49,8 @@ body {
 <svg id="chart" width="850" height="400"></svg>
 
 <!--Mostramos menú desplegable con los dos generos F/M -->
-Eliga un Género: 
 <div>
+Eliga un Género: 
 <select id="gender"></select>
 
 <!--Mostramos Checkbox para ordenar descendente los datos-->
@@ -118,7 +118,8 @@ function chart(csv) {
 
 		svg.selectAll(".y-axis").transition().duration(speed)
 			.call(d3.axisLeft(y).ticks(null, "s"))
-
+		
+		//Define el ordenamiento si está "Palomeado" ordena asscendente o descendentemente por el eje de edades (x)
 		data.sort(d3.select("#sort").property("checked")
 			? (a, b) => b.total - a.total
 			: (a, b) => ages.indexOf(a.Age) - ages.indexOf(b.Age))
