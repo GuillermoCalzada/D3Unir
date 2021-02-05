@@ -86,9 +86,9 @@ function chart(csv) {
 		.range([margin.left, width - margin.right])
 		.padding(0.1)
 
-	
+	//Define propiedades del eje
 	var y = d3.scaleLinear()
-		.rangeRound(10)
+		.rangeRound([height - margin.bottom, margin.top])
 
 	var xAxis = svg.append("g")
 		.attr("transform", `translate(0,${height - margin.bottom})`)
