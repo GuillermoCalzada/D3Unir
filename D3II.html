@@ -144,7 +144,8 @@ function chart(csv) {
 			.data(d => d, e => e.data.Age);
 
 		bars.exit().remove()
-
+		//Características de texto en gráfica y Efectos de transcisión al seleccionar el ordenamiento de edad
+		//de Barras
 		bars.enter().append("rect")
 			.attr("width", x.bandwidth())
 			.merge(bars)
@@ -157,7 +158,7 @@ function chart(csv) {
 			.data(data, d => d.Age);
 
 		text.exit().remove()
-
+		//de texto
 		text.enter().append("text")
 			.attr("class", "text")
 			.attr("text-anchor", "middle")
@@ -180,6 +181,6 @@ function chart(csv) {
 }
 
 </script>
-<div><p1>Stacked bar chart. (n.d.). Retrieved February 5, 2021, from Ocks.org website: https://bl.ocks.org/LemoNode/5a64865728c6059ed89388b5f83d6b67</p1></div>
+<div><p1>Base de: Stacked bar chart. (n.d.). Retrieved February 2, 2021, from Ocks.org website: https://bl.ocks.org/LemoNode/5a64865728c6059ed89388b5f83d6b67</p1></div>
 </body>
 </html> 
