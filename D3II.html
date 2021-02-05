@@ -65,7 +65,7 @@ function chart(csv) {
 	var keys = csv.columns.slice(2);
 
 	var gender   = [...new Set(csv.map(d => d.Gender))]
-	var states = [...new Set(csv.map(d => d.State))]
+	var years = [...new Set(csv.map(d => d.Year))]
 
 	var options = d3.select("#gender").selectAll("option")
 		.data(gender)
@@ -114,9 +114,9 @@ function chart(csv) {
 
 		data.sort(d3.select("#sort").property("checked")
 			? (a, b) => b.total - a.total
-			: (a, b) => states.indexOf(a.State) - states.indexOf(b.State))
+			: (a, b) => years.indexOf(a.Year) - years.indexOf(b.Year))
 
-		x.domain(data.map(d => d.State));
+		x.domain(data.map(d => d.Year));
 
 		svg.selectAll(".x-axis").transition().duration(speed)
 			.call(d3.axisBottom(x).tickSizeOuter(0))
@@ -131,7 +131,7 @@ function chart(csv) {
 			.attr("fill", d => z(d.key));
 
 		var bars = svg.selectAll("g.layer").selectAll("rect")
-			.data(d => d, e => e.data.State);
+			.data(d => d, e => e.data.Year);
 
 		bars.exit().remove()
 
@@ -139,12 +139,12 @@ function chart(csv) {
 			.attr("width", x.bandwidth())
 			.merge(bars)
 		.transition().duration(speed)
-			.attr("x", d => x(d.data.State))
+			.attr("x", d => x(d.data.Year))
 			.attr("y", d => y(d[1]))
 			.attr("height", d => y(d[0]) - y(d[1]))
 
 		var text = svg.selectAll(".text")
-			.data(data, d => d.State);
+			.data(data, d => d.Year);
 
 		text.exit().remove()
 
@@ -153,7 +153,7 @@ function chart(csv) {
 			.attr("text-anchor", "middle")
 			.merge(text)
 		.transition().duration(speed)
-			.attr("x", d => x(d.State) + x.bandwidth() / 2)
+			.attr("x", d => x(d.Year) + x.bandwidth() / 2)
 			.attr("y", d => y(d.total) - 5)
 			.text(d => d.total)
 	}
