@@ -81,7 +81,10 @@ function chart(csv) {
 		margin = {top: 35, left: 35, bottom: 0, right: 0},
 		width = +svg.attr("width") - margin.left - margin.right,
 		height = +svg.attr("height") - margin.top - margin.bottom;
-
+	
+	var x = d3.scaleBand()
+		.range([margin.left, width - margin.right])
+		.padding(0.1)
 
 
 	var y = d3.scaleLinear()
