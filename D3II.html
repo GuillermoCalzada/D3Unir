@@ -63,15 +63,17 @@ d3.csv("data.csv").then(d => chart(d))
 function chart(csv) {
 	//Define a partir de que columna considera las llaves para el gráfico (en nuestro caso dejamos dos coulmnas fuera Gender y Age)
 	var keys = csv.columns.slice(2);
-
+	
+	//Define la variable Gender y Ages tomando los valores únicos de cada coulmna de data.csv respectivamente
 	var gender   = [...new Set(csv.map(d => d.Gender))]
 	var ages = [...new Set(csv.map(d => d.Age))]
-
+	
 	var options = d3.select("#gender").selectAll("option")
 		.data(gender)
 	.enter().append("option")
 		.text(d => d)
-
+	
+	//Define dimensiónes del gráfico, anchode barras, margenes etc)
 	var svg = d3.select("#chart"),
 		margin = {top: 35, left: 35, bottom: 0, right: 0},
 		width = +svg.attr("width") - margin.left - margin.right,
