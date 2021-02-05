@@ -52,11 +52,13 @@ body {
 Eliga un Género: 
 <select id="gender"></select>
 
+<!--Mostramos Checkbox para ordenar descendente los datos-->
 <input type="checkbox" id="sort">	
-Order Descendente
+Orden Descendente
 
 <script>
 
+/*Cargamos datos de data.csv alojado en la misma ruta*/
 d3.csv("data.csv").then(d => chart(d))
 
 function chart(csv) {
