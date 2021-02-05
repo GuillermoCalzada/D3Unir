@@ -104,20 +104,6 @@ function chart(csv) {
 	//Realiza acción de actualizar cuando se cambia el genero en el combobox
 	update(d3.select("#gender").property("value"), 10)
 	
-	legend.append("text")
-		  .attr("x", width + 5)
-		  .attr("y", 9)
-		  .attr("dy", ".35em")
-		  .style("text-anchor", "start")
-		  .text(function(d, i) { 
-		    switch (i) {
-		      case 0: return "$120k+";
-		      case 1: return "$40-$60k";
-		      case 2: return "$60-$80k";
-		      case 3: return "$80-120k";
-		      case 4: return "Less than $40K";
-		      case 5: return "Unknown";
-		    }
 	
 	//Función para actualizar gráfico según filtros
 	function update(input, speed) {
