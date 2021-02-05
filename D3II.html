@@ -54,11 +54,10 @@ Eliga un Género:
 
 <!--Mostramos Checkbox para ordenar descendente los datos-->
 <input type="checkbox" id="sort">	
-Orden Descendente
+Order Descendente
 
 <script>
 
-/*Cargamos datos de data.csv alojado en la misma ruta*/
 d3.csv("data.csv").then(d => chart(d))
 
 function chart(csv) {
