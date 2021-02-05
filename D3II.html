@@ -58,18 +58,6 @@ Orden Descendente
 <!--Definimos dimensiones que puede ocupar el gráfico "Chart"-->
 <svg id="chart" width="850" height="400"></svg>
 
-<!--Mostramos menú desplegable con los dos generos F/M -->
-<div>
-Eliga un Género: 
-<select id="gender"></select>
-
-<!--Mostramos Checkbox para ordenar descendente los datos-->
-<input type="checkbox" id="sort">	
-Orden Descendente
-</div>
-
-
-
 <script>
 
 d3.csv("data.csv").then(d => chart(d))
@@ -94,9 +82,7 @@ function chart(csv) {
 		width = +svg.attr("width") - margin.left - margin.right,
 		height = +svg.attr("height") - margin.top - margin.bottom;
 
-	var x = d3.scaleBand()
-		.range([margin.left, width - margin.right])
-		.padding(0.1)
+
 
 	var y = d3.scaleLinear()
 		.rangeRound([height - margin.bottom, margin.top])
