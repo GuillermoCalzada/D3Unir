@@ -45,11 +45,12 @@ body {
     </header>
 	
 <body>
-
+<!--Definimos dimensiones que puede ocupar el gráfico "Chart"-->
 <svg id="chart" width="850" height="400"></svg>
 
+<!--Mostramos menú desplegable con los dos generos F/M -->
 Eliga un Género: 
-<select id="year"></select>
+<select id="gender"></select>
 
 <input type="checkbox" id="sort">	
 Order Descendente
@@ -62,11 +63,11 @@ function chart(csv) {
 
 	var keys = csv.columns.slice(2);
 
-	var year   = [...new Set(csv.map(d => d.Year))]
+	var gender   = [...new Set(csv.map(d => d.Gender))]
 	var states = [...new Set(csv.map(d => d.State))]
 
-	var options = d3.select("#year").selectAll("option")
-		.data(year)
+	var options = d3.select("#gender").selectAll("option")
+		.data(gender)
 	.enter().append("option")
 		.text(d => d)
 
@@ -94,11 +95,11 @@ function chart(csv) {
 		.range(["steelblue", "darkorange", "lightblue"])
 		.domain(keys);
 
-	update(d3.select("#year").property("value"), 0)
+	update(d3.select("#gender").property("value"), 0)
 
 	function update(input, speed) {
 
-		var data = csv.filter(f => f.Year == input)
+		var data = csv.filter(f => f.Gender == input)
 
 		data.forEach(function(d) {
 			d.total = d3.sum(keys, k => +d[k])
@@ -156,7 +157,7 @@ function chart(csv) {
 			.text(d => d.total)
 	}
 
-	var select = d3.select("#year")
+	var select = d3.select("#gender")
 		.on("change", function() {
 			update(this.value, 750)
 		})
