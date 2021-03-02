@@ -95,13 +95,6 @@ function chart(csv) {
 	var xAxis = svg.append("g")
 		.attr("transform", `translate(0,${height - margin.bottom})`)
 		.attr("class", "x-axis")
-	  // text label for the x axis
-  	svg.append("text")             
-	      .attr("transform",
-		    "translate(" + (width/2) + " ," + 
-				   (height + margin.top + 20) + ")")
-	      .style("text-anchor", "middle")
-	      .text("Edad");
 
 	var yAxis = svg.append("g")
 		.attr("transform", `translate(${margin.left},0)`)
@@ -111,8 +104,7 @@ function chart(csv) {
 	//Define Escala de colores para las llaves (columnas del data.csv que se definieron)
 	var z = d3.scaleOrdinal()
 		.range(["steelblue", "darkorange", "lightblue","blue","green","yellow"])
-		.domain(keys)
-		.text("Total Casos");
+		.domain(keys);
 
 	
 	//Realiza acción de actualizar cuando se cambia el genero en el combobox
@@ -195,6 +187,9 @@ function chart(csv) {
 }
 
 </script>
+	
+<div><p1>Edad</p1></div>
+	
 <div><p1>Base de: Stacked bar chart. (n.d.). Retrieved February 2, 2021, from Ocks.org website: https://bl.ocks.org/LemoNode/5a64865728c6059ed89388b5f83d6b67</p1></div>
 </body>
 </html> 
