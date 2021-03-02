@@ -111,16 +111,8 @@ function chart(csv) {
 	//Define Escala de colores para las llaves (columnas del data.csv que se definieron)
 	var z = d3.scaleOrdinal()
 		.range(["steelblue", "darkorange", "lightblue","blue","green","yellow"])
-		.domain(keys);
-	
-	  // text label for the y axis
-		  svg.append("text")
-		      .attr("transform", "rotate(-90)")
-		      .attr("y", 0 - margin.left)
-		      .attr("x",0 - (height / 2))
-		      .attr("dy", "1em")
-		      .style("text-anchor", "middle")
-		      .text("Total de Casos");    
+		.domain(keys)
+		.text("Total Casos");
 
 	
 	//Realiza acción de actualizar cuando se cambia el genero en el combobox
